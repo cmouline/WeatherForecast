@@ -9,6 +9,7 @@ target 'WeatherForecast' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'
+  pod 'Kingfisher'
 
   target 'WeatherForecastTests' do
     inherit! :search_paths
