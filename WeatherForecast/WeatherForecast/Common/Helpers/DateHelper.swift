@@ -34,9 +34,6 @@ class DateHelper {
         
         let date = Date(timeIntervalSince1970: timestamp)
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = format.string
         
         return dateFormatter.string(from: date)

@@ -53,7 +53,7 @@ class CityWeatherViewController: UIViewController, UITableViewDelegate, UITableV
             if let temperature = weatherData["main"]["temp"].double?.description,
                 let mainInfo = weatherInfo["main"].string,
                 let descriptionInfo = weatherInfo["description"].string {
-                cell.textDescriptionLabel.text = "🌡 \(temperature) º\(RequestManager.shared.degreeUnit.string) - \(mainInfo): \(descriptionInfo)"
+                cell.textDescriptionLabel.text = "\(mainInfo): \(descriptionInfo) 🌡 \(temperature) º\(RequestManager.shared.degreeUnit.string)"
             }
         }
 
