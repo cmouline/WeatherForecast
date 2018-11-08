@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lOr-F9-oC0">
-                                        <rect key="frame" x="143" y="153" width="89" height="29"/>
+                                        <rect key="frame" x="143" y="138" width="89" height="29"/>
                                         <segments>
                                             <segment title="ºC"/>
                                             <segment title="ºF"/>
@@ -37,13 +37,13 @@
                                         <color key="tintColor" red="0.44927942139999999" green="0.72050538929999997" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search city by name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeN-SQ-VH0">
-                                        <rect key="frame" x="99" y="221" width="177.5" height="23.5"/>
+                                        <rect key="frame" x="99" y="191" width="177.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aR5-fn-G6T">
-                                        <rect key="frame" x="64.5" y="252.5" width="246" height="30"/>
+                                        <rect key="frame" x="64.5" y="222.5" width="246" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g London, Paris..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivK-2J-vZG">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -69,15 +69,19 @@
                                             <constraint firstItem="ivK-2J-vZG" firstAttribute="trailing" secondItem="7mz-ht-HNz" secondAttribute="leading" id="yOp-Fs-6ZS"/>
                                         </constraints>
                                     </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="54j-Rq-nwx">
+                                        <rect key="frame" x="10" y="272.5" width="355" height="384.5"/>
+                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="aR5-fn-G6T" firstAttribute="top" secondItem="GeN-SQ-VH0" secondAttribute="bottom" constant="8" symbolic="YES" id="49Y-15-B4F"/>
                                     <constraint firstItem="lOr-F9-oC0" firstAttribute="centerX" secondItem="KWr-xw-Grh" secondAttribute="centerX" id="Be0-tk-hFu"/>
                                     <constraint firstItem="aR5-fn-G6T" firstAttribute="centerX" secondItem="GeN-SQ-VH0" secondAttribute="centerX" id="EHC-ZR-Zv0"/>
-                                    <constraint firstItem="lOr-F9-oC0" firstAttribute="top" secondItem="KWr-xw-Grh" secondAttribute="bottom" constant="40" id="NzL-wH-Og3"/>
+                                    <constraint firstItem="54j-Rq-nwx" firstAttribute="top" secondItem="aR5-fn-G6T" secondAttribute="bottom" constant="20" id="HaE-UP-yXu"/>
+                                    <constraint firstItem="lOr-F9-oC0" firstAttribute="top" secondItem="KWr-xw-Grh" secondAttribute="bottom" constant="25" id="NzL-wH-Og3"/>
                                     <constraint firstItem="GeN-SQ-VH0" firstAttribute="centerX" secondItem="KWr-xw-Grh" secondAttribute="centerX" id="Qdp-yw-0JY"/>
-                                    <constraint firstItem="GeN-SQ-VH0" firstAttribute="top" secondItem="lOr-F9-oC0" secondAttribute="bottom" constant="40" id="mJ5-pi-5g7"/>
+                                    <constraint firstItem="GeN-SQ-VH0" firstAttribute="top" secondItem="lOr-F9-oC0" secondAttribute="bottom" constant="25" id="mJ5-pi-5g7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -119,11 +123,14 @@
                             <constraint firstAttribute="trailing" secondItem="Pq1-08-yhs" secondAttribute="trailing" id="20f-Hr-fSz"/>
                             <constraint firstItem="KWr-xw-Grh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2lt-Kg-9n6"/>
                             <constraint firstAttribute="trailing" secondItem="7ra-a6-7Ln" secondAttribute="trailing" id="6zZ-SP-xx0"/>
+                            <constraint firstItem="54j-Rq-nwx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Cdt-uu-nF0"/>
                             <constraint firstItem="Pq1-08-yhs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cgo-JM-6FO"/>
                             <constraint firstAttribute="bottom" secondItem="Pq1-08-yhs" secondAttribute="bottom" id="Ier-kt-VEF"/>
                             <constraint firstItem="7ra-a6-7Ln" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MFS-1g-vlC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="54j-Rq-nwx" secondAttribute="trailing" constant="10" id="SYN-hJ-afP"/>
                             <constraint firstItem="Pq1-08-yhs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XYB-Wt-sxc"/>
                             <constraint firstItem="KWr-xw-Grh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eCZ-cY-oWc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="54j-Rq-nwx" secondAttribute="bottom" constant="10" id="fE4-Rb-fib"/>
                             <constraint firstAttribute="bottom" secondItem="7ra-a6-7Ln" secondAttribute="bottom" id="m7P-6V-4AG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -134,6 +141,7 @@
                         <outlet property="degreeUnitSelector" destination="lOr-F9-oC0" id="bmC-Fx-mvd"/>
                         <outlet property="loaderOverlayView" destination="7ra-a6-7Ln" id="2ck-7O-E9v"/>
                         <outlet property="loaderView" destination="X9H-Rx-iBN" id="eAa-GG-8Mp"/>
+                        <outlet property="mapView" destination="54j-Rq-nwx" id="GaS-k6-3Yi"/>
                         <outlet property="submitButton" destination="7mz-ht-HNz" id="an6-iu-0n9"/>
                         <segue destination="LlA-MV-oJj" kind="show" identifier="goToCityWeather" id="lpW-dE-k4Q"/>
                     </connections>

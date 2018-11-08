@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import MapKit
 
 enum degreeUnit: Int {
     
@@ -47,6 +48,7 @@ class RequestManager {
     
     let apiWeatherRequest = "https://api.openweathermap.org/data/2.5/forecast?"
     let requestByName = "q="
+    let requestByCoordinates = "lat=%f&lon=%f"
     let withUnitType = "&units="
     let requestWithToken = "&appid="
     let apiToken = "f7c339ad65e6adc72c66c9f7b55ad380"
@@ -55,14 +57,31 @@ class RequestManager {
     
     func requestBy(cityName: String, completion: @escaping ((JSON) -> Void)) {
         // Remove all non alphabetical characters
-        let cleanCityName = cityName.filter { "abcdefghijklmnopqrstuvwxyz ".contains($0) }
+        let cleanCityName = cityName.lowercased().filter { "abcdefghijklmnopqrstuvwxyz ".contains($0) }
         let requestURL =    apiWeatherRequest +
                             requestByName +
                             cleanCityName.replacingOccurrences(of: " ", with: "%20") +
                             withUnitType +
                             degreeUnit.requestType +
-                            requestWithToken + apiToken
+                            requestWithToken +
+                            apiToken
         
+        makeRequest(requestURL: requestURL, completion: completion)
+    }
+    
+    func requestBy(coordinates: CLLocationCoordinate2D, completion: @escaping ((JSON) -> Void)) {
+        let requestURL =    apiWeatherRequest +
+                            String(format: requestByCoordinates, coordinates.latitude, coordinates.longitude) +
+                            withUnitType +
+                            degreeUnit.requestType +
+                            requestWithToken +
+                            apiToken
+        
+        makeRequest(requestURL: requestURL, completion: completion)
+    }
+
+    private func makeRequest(requestURL: String, completion: @escaping ((JSON) -> Void)) {
+        print("requestURL : \(requestURL)")
         Alamofire.request(requestURL).responseJSON { response in
             if let data = response.data {
                 do {

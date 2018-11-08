@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import Alamofire
 import NVActivityIndicatorView
 
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var degreeUnitSelector: UISegmentedControl!
     @IBOutlet weak var loaderOverlayView: UIView!
     @IBOutlet weak var loaderView: NVActivityIndicatorView!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         degreeUnitSelector.addTarget(self.presenter,
                                      action: #selector(presenter.degreeUnitSelectorValueChanged(_:)),
                                      for: .valueChanged)
+        
+        let touchMap = UITapGestureRecognizer(target: self.presenter,
+                                              action:#selector(presenter.touchMap(_:)))
+        mapView.addGestureRecognizer(touchMap)
     }
     
     func pushCityWeatherViewController(destination: CityWeatherViewController) {
