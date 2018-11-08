@@ -137,7 +137,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose your city" id="Bi3-oe-Uek"/>
+                    <navigationItem key="navigationItem" title="Choose your city" id="Bi3-oe-Uek">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cfY-9J-6Ag"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityTextField" destination="ivK-2J-vZG" id="byH-gS-zB7"/>
                         <outlet property="degreeUnitSelector" destination="lOr-F9-oC0" id="bmC-Fx-mvd"/>
@@ -172,16 +174,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-7k-F7b">
-                                                    <rect key="frame" x="10" y="5" width="43.5" height="33.5"/>
+                                                    <rect key="frame" x="10" y="5" width="60" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="gHv-Vz-afi"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-6n-lga">
-                                                    <rect key="frame" x="58.5" y="5" width="306.5" height="17"/>
+                                                    <rect key="frame" x="75" y="5" width="290" height="17"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiU-dN-GjZ">
-                                                    <rect key="frame" x="58.5" y="22" width="306.5" height="16.5"/>
+                                                    <rect key="frame" x="75" y="22" width="290" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -192,7 +197,6 @@
                                                 <constraint firstItem="rM1-6n-lga" firstAttribute="top" secondItem="p5l-d9-sNH" secondAttribute="top" constant="5" id="24h-GO-idc"/>
                                                 <constraint firstItem="hnL-7k-F7b" firstAttribute="leading" secondItem="p5l-d9-sNH" secondAttribute="leading" constant="10" id="4O1-Lz-awf"/>
                                                 <constraint firstItem="kiU-dN-GjZ" firstAttribute="height" secondItem="rM1-6n-lga" secondAttribute="height" id="4Ys-uZ-Iz8"/>
-                                                <constraint firstItem="hnL-7k-F7b" firstAttribute="width" secondItem="p5l-d9-sNH" secondAttribute="height" multiplier="1:1" id="5mh-sf-Crw"/>
                                                 <constraint firstAttribute="bottom" secondItem="hnL-7k-F7b" secondAttribute="bottom" constant="5" id="WLf-pH-Vnb"/>
                                                 <constraint firstItem="kiU-dN-GjZ" firstAttribute="top" secondItem="rM1-6n-lga" secondAttribute="bottom" id="XB9-h7-fc1"/>
                                                 <constraint firstAttribute="trailing" secondItem="rM1-6n-lga" secondAttribute="trailing" constant="10" id="bi6-va-hKB"/>
