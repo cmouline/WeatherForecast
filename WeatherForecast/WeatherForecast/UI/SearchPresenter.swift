@@ -35,31 +35,7 @@ class SearchPresenter {
         }
     }
     
-    func prepareData(with json: JSON) {
-        // Collect weather icons and store them
-        var iconData: [UIImage] = []
-        json["list"].forEach { elem in
-            let url = URL(string: "https://openweathermap.org/img/w/\(elem.1["weather"][0]["icon"]).png")
-            do {
-                let data = try Data(contentsOf: url!)
-                if let image = UIImage(data: data) {
-                    iconData.append(image)
-                }
-            } catch {
-                view.showAlert()
-                view.hideLoader()
-                print("Error getting weather icon : \(error)")
-            }
-        }
-        
-        // Set CityWeatherViewController with data successfully collected and push VC
-        let destination: CityWeatherViewController = view.storyboard?.instantiateViewController(withIdentifier: "cityWeatherViewController") as! CityWeatherViewController
-        destination.weatherData = json
-        destination.iconData = iconData
-        
-        view.hideLoader()
-        view.pushCityWeatherViewController(destination: destination)
-    }
+    // MARK : - Objcd functions
     
     @objc func degreeUnitSelectorValueChanged(_ sender: UISegmentedControl) {
         RequestManager.shared.degreeUnit = degreeUnit(rawValue: sender.selectedSegmentIndex)!
@@ -82,4 +58,16 @@ class SearchPresenter {
             self?.prepareData(with: json)
         }
     }
+    
+    // MARK : - Private functions
+    
+    private func prepareData(with json: JSON) {
+        // Set and push CityWeatherViewController
+        let destination: CityWeatherViewController = view.storyboard?.instantiateViewController(withIdentifier: "cityWeatherViewController") as! CityWeatherViewController
+        destination.weatherData = json
+        
+        view.hideLoader()
+        view.pushCityWeatherViewController(destination: destination)
+    }
+
 }

@@ -8,17 +8,11 @@
 
 import UIKit
 
-struct weatherCellData {
-    var imageURL: String
-    var mainInformations: String
-    var textDescription: String
-}
-
 class WeatherTableViewCell: UITableViewCell {
 
     @IBOutlet weak var weatherIconImageView: UIImageView!
-    @IBOutlet weak var mainInformationsLabel: UILabel!
-    @IBOutlet weak var textDescriptionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var informationsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +21,8 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func setup() {
-        mainInformationsLabel.adjustsFontSizeToFitWidth = true
-        textDescriptionLabel.adjustsFontSizeToFitWidth = true
+        dateLabel.adjustsFontSizeToFitWidth = true
+        informationsLabel.adjustsFontSizeToFitWidth = true
     }
 
 }

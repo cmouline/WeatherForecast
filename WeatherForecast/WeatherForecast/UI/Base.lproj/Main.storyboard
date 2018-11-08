@@ -36,14 +36,14 @@
                                         </segments>
                                         <color key="tintColor" red="0.44927942139999999" green="0.72050538929999997" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search city by name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeN-SQ-VH0">
-                                        <rect key="frame" x="99" y="191" width="177.5" height="23.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search city by name or click on the map" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeN-SQ-VH0">
+                                        <rect key="frame" x="30" y="191" width="315" height="47"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aR5-fn-G6T">
-                                        <rect key="frame" x="64.5" y="222.5" width="246" height="30"/>
+                                        <rect key="frame" x="64.5" y="246" width="246" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g London, Paris..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivK-2J-vZG">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -70,7 +70,7 @@
                                         </constraints>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="54j-Rq-nwx">
-                                        <rect key="frame" x="10" y="272.5" width="355" height="384.5"/>
+                                        <rect key="frame" x="10" y="296" width="355" height="361"/>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,12 +123,14 @@
                             <constraint firstAttribute="trailing" secondItem="Pq1-08-yhs" secondAttribute="trailing" id="20f-Hr-fSz"/>
                             <constraint firstItem="KWr-xw-Grh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2lt-Kg-9n6"/>
                             <constraint firstAttribute="trailing" secondItem="7ra-a6-7Ln" secondAttribute="trailing" id="6zZ-SP-xx0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GeN-SQ-VH0" secondAttribute="trailing" constant="30" id="Bs1-ny-8Hw"/>
                             <constraint firstItem="54j-Rq-nwx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Cdt-uu-nF0"/>
                             <constraint firstItem="Pq1-08-yhs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cgo-JM-6FO"/>
                             <constraint firstAttribute="bottom" secondItem="Pq1-08-yhs" secondAttribute="bottom" id="Ier-kt-VEF"/>
                             <constraint firstItem="7ra-a6-7Ln" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MFS-1g-vlC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="54j-Rq-nwx" secondAttribute="trailing" constant="10" id="SYN-hJ-afP"/>
                             <constraint firstItem="Pq1-08-yhs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XYB-Wt-sxc"/>
+                            <constraint firstItem="GeN-SQ-VH0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="c1H-oy-XFb"/>
                             <constraint firstItem="KWr-xw-Grh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eCZ-cY-oWc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="54j-Rq-nwx" secondAttribute="bottom" constant="10" id="fE4-Rb-fib"/>
                             <constraint firstAttribute="bottom" secondItem="7ra-a6-7Ln" secondAttribute="bottom" id="m7P-6V-4AG"/>
@@ -174,13 +176,13 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-6n-lga">
                                                     <rect key="frame" x="58.5" y="5" width="306.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiU-dN-GjZ">
                                                     <rect key="frame" x="58.5" y="22" width="306.5" height="16.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -201,8 +203,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="mainInformationsLabel" destination="rM1-6n-lga" id="QrC-iO-v1f"/>
-                                            <outlet property="textDescriptionLabel" destination="kiU-dN-GjZ" id="KRk-oL-kC0"/>
+                                            <outlet property="dateLabel" destination="rM1-6n-lga" id="9aJ-Dt-fSf"/>
+                                            <outlet property="informationsLabel" destination="kiU-dN-GjZ" id="aOF-F3-Orc"/>
                                             <outlet property="weatherIconImageView" destination="hnL-7k-F7b" id="W97-cA-ZME"/>
                                         </connections>
                                     </tableViewCell>

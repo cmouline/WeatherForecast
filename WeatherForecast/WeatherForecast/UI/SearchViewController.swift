@@ -27,7 +27,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         presenter = SearchPresenter(view: self)
-        self.cityTextField.delegate = self
+        cityTextField.delegate = self
         setup()
     }
     
