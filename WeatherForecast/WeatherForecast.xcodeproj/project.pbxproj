@@ -161,7 +161,6 @@
 		92E390DF219353A500CDF069 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				92E390F12193691100CDF069 /* TableViewCells */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -172,6 +171,7 @@
 				92E390F421938C8000CDF069 /* Helpers */,
 				92E390EE219363E800CDF069 /* Managers */,
 				92E390E42193544F00CDF069 /* CustomViews */,
+				92E390F12193691100CDF069 /* TableViewCells */,
 			);
 			path = Common;
 			sourceTree = "<group>";

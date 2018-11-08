@@ -38,7 +38,9 @@ class SearchPresenter {
     // MARK : - Objcd functions
     
     @objc func degreeUnitSelectorValueChanged(_ sender: UISegmentedControl) {
-        RequestManager.shared.degreeUnit = degreeUnit(rawValue: sender.selectedSegmentIndex)!
+        if let newDegreeUnit = degreeUnit(rawValue: sender.selectedSegmentIndex) {
+            RequestManager.shared.degreeUnit = newDegreeUnit
+        }
     }
     
     @objc func touchMap(_ gestureReconizer: UITapGestureRecognizer) {
